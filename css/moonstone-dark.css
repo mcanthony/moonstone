@@ -759,7 +759,9 @@ html {
 }
 .moon-simple-picker {
   display: inline-block;
-  max-width: 14.583333333333334rem;
+  min-width: 7rem;
+  max-width: 15rem;
+  width: 11rem;
   box-sizing: border-box;
   padding: 0 2.91666667rem;
   position: relative;

@@ -136,7 +136,9 @@
 			* @default false
 			* @public
 			*/
-			block: false
+			block: false,
+
+			width: null
 		},
 
 		/**
@@ -175,6 +177,7 @@
 				this.updateMarqueeDisable();
 				this.blockChanged();
 				this.showHideNavButtons();
+				this.widthChanged();
 			};
 		}),
 
@@ -187,6 +190,25 @@
 				this.selectedIndexChanged();
 			};
 		}),
+		widthChanged: function () {
+			this.inherited(arguments);
+			var w = this.get('width'),
+				min = 168,
+				max = 360;
+			if      (w == 'min')   w = min;
+			// else if (w == 'small') w = (9*24);
+			else if (w == 'default') w = null;
+			// else if (w == 'large') w = (13*24);
+			else if (w == 'max')   w = max;
+			else if (typeof w == 'number') { w = this.clampValue(min, max, w); }
+			else return;
+
+			this.applyStyle('width', w ? enyo.dom.unit(moon.riScale(w), 'rem') : null);
+		},
+
+		clampValue: function (min, max, value) {
+			return Math.max(min, Math.min(value, max));
+		},
 
 		/**
 		* @private

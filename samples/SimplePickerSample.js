@@ -6,7 +6,7 @@ enyo.kind({
 		{kind:"moon.Scroller", fit:true, components: [
 
 			{kind: "moon.Divider", content:"Picker 1 & 2: Animated"},
-			{kind:"moon.SimplePicker", name:"picker1", onChange:"changed", components: [
+			{kind:"moon.SimplePicker", name:"picker1", width: "max", onChange:"changed", components: [
 				{content:"San Francisco Airport Terminal Gate 1", active: true},
 				{content:"Boston Airport Terminal Gate 2"},
 				{content:"Tokyo Airport Terminal Gate 3"},
@@ -17,6 +17,35 @@ enyo.kind({
 				{content:"Level 2", active: true},
 				{content:"Level 3"},
 				{content:"Level 4"}
+			]},
+			{tag: 'br'},
+			{kind:"moon.SimplePicker", name:"sizedPicker1", width: "min", onChange:"changed", components: [
+				{content:"A"},
+				{content:"B", active: true},
+				{content:"C"},
+				{content:"D"}
+			]},
+			{tag: 'br'},
+			{kind:"moon.SimplePicker", name:"sizedPicker3", onChange:"changed", components: [
+				{content:"Level 1"},
+				{content:"Level 2", active: true},
+				{content:"Level 3"},
+				{content:"Level 4"}
+			]},
+			{tag: 'br'},
+			{kind:"moon.SimplePicker", name:"sizedPicker5", width: "max", onChange:"changed", components: [
+				{content:"Level 1"},
+				{content:"Level 2", active: true},
+				{content:"Level 3"},
+				{content:"Level 4"}
+			]},
+			{tag: 'br'},
+			{kind:"moon.SimplePicker", name:"sizedPicker6", width: 216, onChange:"changed", components: [
+				{content:"Mon"},
+				{content:"Tues", active: true},
+				{content:"Wed"},
+				{content:"Thur"},
+				{content:"Fri"}
 			]},
 			{classes:"moon-1v"},
 
