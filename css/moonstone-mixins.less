@@ -23,3 +23,11 @@
 	width: 100% !important;
 	height: 100% !important;
 }
+
+.explode-rule(@rule, @selectorArray) {
+	.-(@i: length(@selectorArray)) when (@i > 0) {
+		@selector: extract(@selectorArray, @i);
+		&@{selector} { @rule(); }
+		.-((@i - 1));
+	} .-;
+}
