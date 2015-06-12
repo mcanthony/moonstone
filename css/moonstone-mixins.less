@@ -1,11 +1,11 @@
-.moon-item-icon-tap-area-adjust {
+.mixin-moon-item-icon-tap-area-adjust {
 	&.small > .small-icon-tap-area {
 		left: -@moon-spotlight-outset;
 		right: -@moon-spotlight-outset;
 	}
 }
 
-.full-screen-video-player {
+.mixin-full-screen-video-player {
 	position: static !important;
 	display: block !important;
 	margin: 0;
@@ -15,7 +15,7 @@
 	}
 }
 
-.hide-full-screen-ancestor {
+.mixin-hide-full-screen-ancestor {
 	position: absolute !important;
 	overflow: visible !important;
 	padding: 0 !important;
@@ -24,10 +24,11 @@
 	height: 100% !important;
 }
 
-.explode-rule(@rule, @selectorArray) {
-	.-(@i: length(@selectorArray)) when (@i > 0) {
-		@selector: extract(@selectorArray, @i);
-		&@{selector} { @rule(); }
-		.-((@i - 1));
-	} .-;
+.mixin-input-placeholder(@rule) {
+	&::-webkit-input-placeholder {
+		@rule();
+	}
+	&::-moz-placeholder {
+		@rule();
+	}
 }

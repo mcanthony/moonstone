@@ -26,21 +26,21 @@
 }
 
 .moon-input-header .moon-input.moon-header-title {
-	.explode-rule({
+	.mixin-input-placeholder({
 		color: @moon-input-header-placeholder-color;
 		margin-top:12px;
 		line-height: 1.25em;
-	}, @input-placeholder-pseudo-selectors);
+	});
 }
 .enyo-locale-non-latin .moon-input-header .moon-input.moon-header-title {
-	.explode-rule({
+	.mixin-input-placeholder({
 		line-height: 1.5em;
-	}, @input-placeholder-pseudo-selectors);
+	});
 }
 .moon-input-header-input-decorator.spotlight .moon-input {
-	.explode-rule({
+	.mixin-input-placeholder({
 		color: @moon-spotlight-text-color;
-	}, @input-placeholder-pseudo-selectors);
+	});
 }
 .moon-input-header-input-decorator.spotlight > .moon-input {
 	background-color: @moon-spotlight-background-color;
@@ -50,7 +50,7 @@
 	background: none;
 }
 .moon-input-header-input-decorator.spotlight.moon-focused > .moon-input {
-	.explode-rule({
+	.mixin-input-placeholder({
 		color: @moon-input-header-placeholder-color;
-	}, @input-placeholder-pseudo-selectors);
+	});
 }
